@@ -1,10 +1,12 @@
 describe('My First Test', () => {
-    it('clicking "type" navigates to a new url', () => {
+    it('A', () => {
     cy.visit('https://toodledid.herokuapp.com/')
     cy.get('#auth')
     .should('be.visible')
     .click()
+    })
 
+     it('B', () => {
      cy.get('#email')
      .should('be.visible')
      .type(process.env.EMAIL)
@@ -14,5 +16,6 @@ describe('My First Test', () => {
    cy.get('input[name="authorized"]')
      .should('be.visible')
      .click()
+     })
   })
 })
