@@ -27,8 +27,10 @@ executors:
       - image: 'cypress/browsers:node13.6.0-chrome80-ff72'
       
 environment:
-  EMAIL: $EMAIL
-  PASSWORD: $PASSWORD 
+  - EMAIL=$EMAIL
+  - PASSWORD=$PASSWORD
+#   EMAIL: $EMAIL
+#   PASSWORD: $PASSWORD 
   
 workflows:
   build:
