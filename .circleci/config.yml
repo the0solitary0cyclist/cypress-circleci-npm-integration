@@ -36,13 +36,12 @@ executors:
   
 workflows:
   build:
-    environment:
-  - EMAIL="email@email.com"
+    jobs:
+      environment:
+      - EMAIL="email@email.com"
 #   - PASSWORD=$PASSWORD
 #   EMAIL: $EMAIL
 #   PASSWORD: $PASSWORD 
-
-    jobs:
       - cypress/run:
 #           env: 'EMAIL=Joe@joe.com'
 #         command: |
