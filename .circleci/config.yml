@@ -1,66 +1,8 @@
 version: 2.1
 orbs:
-  cypress: cypress-io/cypress@1.4.0
+  cypress: cypress-io/cypress@1
 workflows:
   build:
     jobs:
-      - cypress/run
-
-# version: 2
-# jobs:
-# build:
-#   working_directory: /tmp
-#   steps:
-#     - run:
-#         name: Creating Dummy Artifacts
-#         command: |
-#           echo "my artifact file" > /tmp/art-1;
-#           mkdir /tmp/artifacts;
-#           echo "my artifact files in a dir" > /tmp/artifacts/art-2;
-#     - store_artifacts:
-#         path: /tmp/art-1
-#         destination: artifact-file
-#     - store_artifacts:
-#         path: /tmp/artifacts
-
-# version: 2
-
-# jobs:
-#   build:
-#     docker:
-#       # the Docker image with Cypress dependencies
-#       - image: cypress/base:8
-#         environment:
-#           ## this enables colors in the output
-#           TERM: xterm
-# #     working_directory: ~/app
-# #     parallelism: 1
-#     steps:
-#       - checkout
-#       - restore_cache:
-#           keys:
-#             - v2-deps-{{ .Branch }}-{{ checksum "package-lock.json" }}
-#             - v2-deps-{{ .Branch }}-
-#             - v2-deps-
-# #       - run: npm ci
-#       - run: $(npm bin)/cypress run
-# #       - run: cypress run
-#       - save_cache:
-#           key: v2-deps-{{ .Branch }}-{{ checksum "package-lock.json" }}
-#           paths:
-#             - ~/.npm
-#             - ~/.cache
-#       - run:
-#           name: Running E2E tests with JUnit reporter
-#           command: npm run test-junit
-#       - store_test_results:
-#           path: junit-results
-#       - run:
-#           name: Running E2E tests with multiple reporters
-#           command: npm run test-multiple
-#       - store_test_results:
-#           path: multiple-results
-      - store_artifacts:
-          path: cypress/videos
-      - store_artifacts:
-          path: cypress/screenshots
+      - cypress/run:
+          store_artifacts: true
