@@ -35,8 +35,8 @@ workflows:
     jobs:
       - cypress/run:
         command: |
-#             printf "EMAIL=$EMAIL\r\n" >> .env.$NODE_ENV
-#             printf "PASSWORD=$PASSWORD\r\n" >> .env.$NODE_ENV
+            printf "EMAIL=$EMAIL\r\n" >> .env.$NODE_ENV
+            printf "PASSWORD=$PASSWORD\r\n" >> .env.$NODE_ENV
 #       command:
 #       echo 'export EMAIL=${EMAIL}' >> $NODE_ENV
 #       echo 'export PASSWORD=${PASSWORD}' >> $NODE_ENV
