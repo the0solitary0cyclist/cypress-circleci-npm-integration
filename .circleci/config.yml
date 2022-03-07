@@ -171,13 +171,22 @@ workflows:
 #       - unit-test-partners:
 #           requires:
 #             - setup
+
       - cypress/run:
-#           name: "cypress-public"
+          name: "cypress-partners"
           requires:
             - setup
-             executor: chrome80-ff72
-            browser: chrome
-            store_artifacts: true
+          executor: chrome80-ff72
+          browser: chrome
+          store_artifacts: true
+
+#       - cypress/run:
+# #           name: "cypress-public"
+#           requires:
+#             - setup
+#             executor: chrome80-ff72
+#             browser: chrome
+#             store_artifacts: true
 #           executor: cypress-node
 #           working_directory: sites/public
 #           yarn: true
