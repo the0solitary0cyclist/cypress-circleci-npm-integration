@@ -32,14 +32,16 @@ executors:
 #     BROWSERSTACK_LOCAL: false
 #     BROWSERSTACK_LOCAL_IDENTIFIER: "identifier"
     
-environment:
+
+  
+workflows:
+  build:
+    environment:
   - EMAIL="email@email.com"
 #   - PASSWORD=$PASSWORD
 #   EMAIL: $EMAIL
 #   PASSWORD: $PASSWORD 
-  
-workflows:
-  build:
+
     jobs:
       - cypress/run:
 #           env: 'EMAIL=Joe@joe.com'
