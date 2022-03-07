@@ -25,8 +25,8 @@ executors:
   chrome80-ff72:
     docker:
       - image: 'cypress/browsers:node13.6.0-chrome80-ff72'
-  environment:
-      EMAIL: "email@email.com"
+environment:
+    EMAIL: "email@email.com"
 #     BROWSERSTACK_USERNAME: "YOUR_USERNAME"
 #     BROWSERSTACK_ACCESS_KEY: "YOUR_ACCESS_KEY"
 #     BROWSERSTACK_LOCAL: false
