@@ -1,20 +1,17 @@
-describe('UI test', () => {
-    describe('given `Home` page', () => {
-        it('should pass', () => {
-  cy.visit('https://www.google.com');
-//   expect(true).to.equal(false);
-});
-//         before(() => {
-//             cy.visit('/');
-//         });
-//         describe('when user clicks on `FIND CONSULTANT` button', () => {
-//             before(() => {
-//                 cy.get('.homepage .button[href*="/public_createproject"]').click();
-//             });
-//             it('should navigate to `/en/public_createproject` page', () => {
-//                 cy.url().should('include', '/en/public_createproject');
-//                 cy.get('.Alert.info.box').should('contain.text', 'Welcome to COMATCH');
-//             });
-//         });
-    });
-});
+describe('My First Test', () => {
+    it('clicking "type" navigates to a new url', () => {
+    cy.visit('https://toodledid.herokuapp.com/')
+    cy.get('#auth')
+    .should('be.visible')
+
+//     cy.get('#email')
+//     .should('be.visible')
+//     .type(process.env.EMAIL)
+//     cy.get('input[type="password"]')
+//     .should('be.visible')
+//     .type(process.env.PASSWORD)
+//   cy.get('input[name="authorized"]')
+//     .should('be.visible')
+//     .click()
+  })
+})
