@@ -49,7 +49,7 @@ jobs:
 #     steps:
 #       - run: npx cypress run
 
-    - cypress/run:
-        executor: chrome80-ff72
-        browser: chrome
-        store_artifacts: true
+  - cypress/run:
+      executor: chrome80-ff72
+      browser: chrome
+      store_artifacts: true
