@@ -46,5 +46,10 @@ jobs:
 #     parallelism: 3
 #     resource_class: large
 #     working_directory: ~/my-app
-    steps:
-      - run: npx cypress run
+#     steps:
+#       - run: npx cypress run
+
+      - cypress/run:
+          executor: chrome80-ff72
+          browser: chrome
+          store_artifacts: true
