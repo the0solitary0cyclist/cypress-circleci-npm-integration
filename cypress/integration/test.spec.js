@@ -28,7 +28,7 @@ describe('My First Test', () => {
 //     })
 
      it('B', () => {
-         cy.visit('#https://api.toodledo.com/3/account/authorize.php?response_type=code&client_id=toodledid&state=false&scope=basic%20tasks%20write')
+         cy.visit('https://api.toodledo.com/3/account/authorize.php?response_type=code&client_id=toodledid&state=false&scope=basic%20tasks%20write')
          cy.get('#email')
          .should('be.visible')
          .type(process.env.EMAIL)
