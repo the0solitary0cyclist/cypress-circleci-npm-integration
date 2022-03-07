@@ -1,10 +1,15 @@
 version: 2.1
 orbs:
   cypress: cypress-io/cypress@1
+executors:
+    with-chrome:
+#   chrome80-ff72:
+    docker:
+      - image: 'cypress/browsers:node13.6.0-chrome80-ff72'
 workflows:
   build:
     jobs:
       - cypress/run:
-#           executor: with-chrome
+          executor: with-chrome
           browser: chrome
           store_artifacts: true
