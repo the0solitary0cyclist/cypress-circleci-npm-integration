@@ -49,11 +49,13 @@ jobs:
   setup:
 #     executor: standard-node
     steps:
-      - run:
-          name: Envo Stuff
-          command: |
-            npx cowsay "nice"
-            npx cowsay "bro"
+      environment:
+        EMAIL: "e@mail.com"
+#       - run:
+#           name: Envo Stuff
+#           command: |
+#             npx cowsay "nice"
+#             npx cowsay "bro"
         
                    
           cowsay
@@ -61,8 +63,8 @@ jobs:
 #             yarn test:backend:core:dbsetup
 #             yarn test:backend:core
 #             yarn test:e2e:backend:core
-          environment:
-            EMAIL: "e@mail.com"
+#           environment:
+#             EMAIL: "e@mail.com"
 #   setup:
 #     executor: standard-node
 #     steps:
