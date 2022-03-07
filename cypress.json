@@ -1,3 +1,4 @@
 {
-  "baseUrl": "https://toodledid.herokuapp.com/"
+  "baseUrl": "https://toodledid.herokuapp.com/",
+  "chromeWebSecurity": false
 }
