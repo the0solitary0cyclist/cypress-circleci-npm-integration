@@ -26,17 +26,17 @@ executors:
     docker:
       - image: 'cypress/browsers:node13.6.0-chrome80-ff72'
       
-# environment:
-#   EMAIL: EMAIL
-#   PASSWORD: PASSWORD 
+environment:
+  EMAIL: $EMAIL
+  PASSWORD: $PASSWORD 
   
 workflows:
   build:
     jobs:
       - cypress/run:
-        command: |
-            printf "EMAIL=$EMAIL\r\n" >> .env.$NODE_ENV
-            printf "PASSWORD=$PASSWORD\r\n" >> .env.$NODE_ENV
+#         command: |
+#             printf "EMAIL=$EMAIL\r\n" >> .env.$NODE_ENV
+#             printf "PASSWORD=$PASSWORD\r\n" >> .env.$NODE_ENV
 #       command:
 #       echo 'export EMAIL=${EMAIL}' >> $NODE_ENV
 #       echo 'export PASSWORD=${PASSWORD}' >> $NODE_ENV
