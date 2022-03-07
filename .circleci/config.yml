@@ -1,3 +1,24 @@
+# version: 2.1          
+# orbs:
+#   # use latest 1.x.y version of the orb
+#   # best practice is to use an exact version
+#   cypress: cypress-io/cypress@1.16.1
+#   node: circleci/node@1.1
+
+# executors:
+#   chrome80-ff72:
+#     docker:
+#       - image: 'cypress/browsers:node13.6.0-chrome80-ff72'
+# #         auth:
+# #           username: mydockerhub-user
+# #           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+
+# jobs:
+#   my-job:
+#     executor: chrome80-ff72
+#     steps:
+#       - run: cypress/run
+
 version: 2.1          
 orbs:
   # use latest 1.x.y version of the orb
@@ -14,7 +35,16 @@ executors:
 #           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
 
 jobs:
-  my-job:
-    executor: chrome80-ff72
+  build:
+    docker:
+      - image: 'cypress/browsers:node13.6.0-chrome80-ff72'
+#         auth:
+#           username: mydockerhub-user
+#           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+    environment:
+      EMAIL: 'email@email.com'
+#     parallelism: 3
+#     resource_class: large
+#     working_directory: ~/my-app
     steps:
       - run: cypress/run
