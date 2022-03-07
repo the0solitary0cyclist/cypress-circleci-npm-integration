@@ -26,13 +26,24 @@ executors:
     docker:
       - image: 'cypress/browsers:node13.6.0-chrome80-ff72'
       
+environment:
+  EMAIL: EMAIL
+  PASSWORD: PASSWORD 
+  
 workflows:
   build:
     jobs:
       - cypress/run:
-      command:
-      echo 'export EMAIL=${EMAIL}' >> $NODE_ENV
-      echo 'export PASSWORD=${PASSWORD}' >> $NODE_ENV
+#       command:
+#       echo 'export EMAIL=${EMAIL}' >> $NODE_ENV
+#       echo 'export PASSWORD=${PASSWORD}' >> $NODE_ENV
+#                 command: |
+#             printf "CLIENT_ID=$CLIENT_ID\r\n" >> .env.$NODE_ENV
+#             printf "PROVIDER=$PROVIDER\r\n" >> .env.$NODE_ENV
+#             printf "API_BASE=$API_BASE\r\n" >> .env.$NODE_ENV
+#             printf "API_URL=$API_URL\r\n" >> .env.$NODE_ENV
+#             printf "AUDIENCE=$AUDIENCE\r\n" >> .env.$NODE_ENV
+#             printf "ASSETS_URL=$ASSETS_URL\r\n" >> .env.$NODE_ENV
           executor: chrome80-ff72
           browser: chrome
           store_artifacts: true
