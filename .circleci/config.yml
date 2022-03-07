@@ -30,6 +30,9 @@ workflows:
   build:
     jobs:
       - cypress/run:
+      command:
+      echo 'export EMAIL=${EMAIL}' >> $NODE_ENV
+      echo 'export PASSWORD=${PASSWORD}' >> $NODE_ENV
           executor: chrome80-ff72
           browser: chrome
           store_artifacts: true
