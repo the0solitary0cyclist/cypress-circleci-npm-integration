@@ -47,4 +47,4 @@ jobs:
 #     resource_class: large
 #     working_directory: ~/my-app
     steps:
-      - run: cypress/run
+      - run: npx cypress run
