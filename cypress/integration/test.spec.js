@@ -3,6 +3,7 @@ describe('My First Test', () => {
     cy.visit('https://toodledid.herokuapp.com/')
     cy.get('#auth')
     .should('be.visible')
+    .click()
 
      cy.get('#email')
      .should('be.visible')
