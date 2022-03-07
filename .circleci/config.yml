@@ -1,20 +1,4 @@
-# version: 2.1
-# orbs:
-#   cypress: cypress-io/cypress@1
-# executors:
-#     with-chrome:
-# #   chrome80-ff72:
-#     docker:
-#       - image: 'cypress/browsers:node13.6.0-chrome80-ff72'
-# workflows:
-#   build:
-#     jobs:
-#       - cypress/run:
-#           executor: with-chrome
-#           browser: chrome
-#           store_artifacts: true
-
-version: 2.1
+version: 2.1          
 orbs:
   # use latest 1.x.y version of the orb
   # best practice is to use an exact version
@@ -25,38 +9,12 @@ executors:
   chrome80-ff72:
     docker:
       - image: 'cypress/browsers:node13.6.0-chrome80-ff72'
-# environment:
-#     EMAIL: "email@email.com"
-#     BROWSERSTACK_USERNAME: "YOUR_USERNAME"
-#     BROWSERSTACK_ACCESS_KEY: "YOUR_ACCESS_KEY"
-#     BROWSERSTACK_LOCAL: false
-#     BROWSERSTACK_LOCAL_IDENTIFIER: "identifier"
-    
+#         auth:
+#           username: mydockerhub-user
+#           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
 
-  
-workflows:
-  environment:
-  - EMAIL="email@email.com"
-#   - PASSWORD=$PASSWORD
-#   EMAIL: $EMAIL
-#   PASSWORD: $PASSWORD 
-  build:
-    jobs:
-      - cypress/run:
-#           env: 'EMAIL=Joe@joe.com'
-#         command: |
-#             printf "EMAIL=$EMAIL\r\n" >> .env.$NODE_ENV
-#             printf "PASSWORD=$PASSWORD\r\n" >> .env.$NODE_ENV
-#       command:
-#       echo 'export EMAIL=${EMAIL}' >> $NODE_ENV
-#       echo 'export PASSWORD=${PASSWORD}' >> $NODE_ENV
-#                 command: |
-#             printf "CLIENT_ID=$CLIENT_ID\r\n" >> .env.$NODE_ENV
-#             printf "PROVIDER=$PROVIDER\r\n" >> .env.$NODE_ENV
-#             printf "API_BASE=$API_BASE\r\n" >> .env.$NODE_ENV
-#             printf "API_URL=$API_URL\r\n" >> .env.$NODE_ENV
-#             printf "AUDIENCE=$AUDIENCE\r\n" >> .env.$NODE_ENV
-#             printf "ASSETS_URL=$ASSETS_URL\r\n" >> .env.$NODE_ENV
-          executor: chrome80-ff72
-          browser: chrome
-          store_artifacts: true
+jobs:
+  my-job:
+    executor: chrome80-ff72
+    steps:
+      - run: cypress/run
