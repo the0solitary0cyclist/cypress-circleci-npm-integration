@@ -51,6 +51,12 @@ jobs:
     steps:
       - run:
           name: Envo Stuff
+          command: |
+            npx cowsay nice
+            npx cowsay bro
+        
+                   
+          cowsay
 #           command: |
 #             yarn test:backend:core:dbsetup
 #             yarn test:backend:core
