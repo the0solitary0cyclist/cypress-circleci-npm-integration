@@ -30,10 +30,13 @@ describe('My First Test', () => {
                  email: Cypress.env('email'),
                  password: Cypress.env('password'),
        }).then((response) => {
+             cy.location().should((loc) => {
+   expect(loc.pathname.toString()).to.contain('/home');
+ });
              // pull out the location redirect
-             const loc = response.headers
-             cy.log(loc)
-             expect(JSON.stringify(response)).to.equal('foo')
+//              const loc = response.headers
+//              cy.log(loc)
+//              expect(JSON.stringify(response)).to.equal('foo')
         })
      })
 })
