@@ -49,5 +49,4 @@ describe('My First Test', () => {
       expect(urlRedirects[2]).to.eq('bar');
 
     });
-     })
 })
