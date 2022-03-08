@@ -31,9 +31,9 @@ describe('My First Test', () => {
                  password: Cypress.env('password'),
        }).then((response) => {
              // pull out the location redirect
-             const loc = response.headers['Location']
+             const loc = response.headers
              cy.log(loc)
-             cy.log(JSON.stringify(response))
+             expect(JSON.stringify(response)).to.equal('foo')
         })
      })
 })
