@@ -12,7 +12,7 @@ describe('My First Test', () => {
   followRedirect: false, // turn off following redirects
   body: {
                  email: Cypress.env('email'),
-                 password: Cypress.env('password'),
+                 pass: Cypress.env('password'),
   },
 }).then((resp) => {
            // redirect status code is 302
