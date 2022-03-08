@@ -33,7 +33,7 @@ describe('My First Test', () => {
              // pull out the location redirect
              const loc = response.headers['Location']
              cy.log(loc)
-             cy.log(response)
+             cy.log(JSON.stringify(response))
         })
      })
 })
