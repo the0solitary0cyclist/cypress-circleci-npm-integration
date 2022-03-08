@@ -1,6 +1,7 @@
 {
   "env": {
-    "email": "email@example.com"
+    "email": "email@example.com",
+    "password": "myexcellentpassword"
   },
   "chromeWebSecurity": false
 }
