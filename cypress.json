@@ -1,6 +1,6 @@
 {
   "env": {
     "email": "email@example.com"
-  }
+  },
   "chromeWebSecurity": false
 }
