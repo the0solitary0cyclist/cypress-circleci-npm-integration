@@ -23,7 +23,7 @@
 
 
 describe('My First Test', () => {
- 
+    it('B', () => {
     const url = "https://api.toodledo.com/3/account/authorize.php?signout=1&response_type=code&client_id=toodledid&state=false&scope=basic%20tasks%20write%20folders"
 
     cy.request('POST', url, {
@@ -36,3 +36,4 @@ describe('My First Test', () => {
              cy.log(response)
         })
      })
+})
