@@ -56,7 +56,7 @@ describe('My First Test', () => {
     const url = "https://api.toodledo.com/3/account/authorize.php?signout=1&response_type=code&client_id=toodledid&state=false&scope=basic%20tasks%20write%20folders"
 
     
-    const urlRedirects = [];
+//     const urlRedirects = [];
 
 
     cy.request('POST', url, {
@@ -64,12 +64,14 @@ describe('My First Test', () => {
                  password: Cypress.env('password'),
        })
        .then((response) => {
-               cy.on('url:changed', (url) => { urlRedirects.push(url);});
+                  expect(response.status).to.equal(302)
+                  expect(response.headers).to.equal('foo')
+//                cy.on('url:changed', (url) => { urlRedirects.push(url);});
         })
-        .then(() =>{
-            expect(urlRedirects).to.have.length(3);
-            expect(urlRedirects[1]).to.eq('foo');
-            expect(urlRedirects[2]).to.eq('bar');
-        })
+//         .then(() =>{
+//             expect(urlRedirects).to.have.length(3);
+//             expect(urlRedirects[1]).to.eq('foo');
+//             expect(urlRedirects[2]).to.eq('bar');
+//         })
     })
 })
