@@ -1,21 +1,30 @@
+# version: 2.1
+# orbs:
+#   # use latest 1.x.y version of the orb
+#   # best practice is to use an exact version
+#   cypress: cypress-io/cypress@1.16.1
+#   node: circleci/node@1.1
+
+# executors:
+#   chrome80-ff72:
+#     docker:
+#       - image: 'cypress/browsers:node13.6.0-chrome80-ff72'
+
+# workflows:
+#   build:
+#     jobs:
+#       - cypress/run:
+#           context:
+#             - toodledid
+#           executor: chrome80-ff72
+#           browser: chrome
+#           store_artifacts: true
+
 version: 2.1
 orbs:
-  # use latest 1.x.y version of the orb
-  # best practice is to use an exact version
   cypress: cypress-io/cypress@1.16.1
-  node: circleci/node@1.1
-
-executors:
-  chrome80-ff72:
-    docker:
-      - image: 'cypress/browsers:node13.6.0-chrome80-ff72'
-
 workflows:
   build:
     jobs:
       - cypress/run:
-          context:
-            - toodledid
-          executor: chrome80-ff72
-          browser: chrome
           store_artifacts: true
