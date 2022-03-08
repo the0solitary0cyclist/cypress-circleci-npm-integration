@@ -1,7 +1,8 @@
 describe('My First Test', () => {
     it('B', () => {
        cy.visit('https://api.toodledo.com/3/account/authorize.php?response_type=code&client_id=toodledid&state=false&scope=basic%20tasks%20write')
-       cy.get('input[name="authorized"]')
+       cy.get('form')
+//        cy.get('input[name="authorized"]')
   //     .should('be.visible')
          .should('have.attr', 'href')
          .then((href) => {
