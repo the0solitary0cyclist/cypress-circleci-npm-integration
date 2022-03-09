@@ -49,7 +49,7 @@ jobs:
               -v $PWD/cypress/videos:/app/cypress/videos \
               -v $PWD/cypress/screenshots:/app/cypress/screenshots \
               gainstrack \
-              sh -c '$(npm bin)/cypress run --reporter junit --reporter-options "mochaFile=cypress/results/test-results.xml"'
+              sh -c '$(npm bin)/cypress run --browser chrome --reporter junit --reporter-options "mochaFile=cypress/results/test-results.xml"'
 
       - store_test_results:
           path: cypress/results
