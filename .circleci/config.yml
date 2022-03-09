@@ -38,7 +38,9 @@ jobs:
   build:
     working_directory: ~/tmp
     docker:
-      - image: 'navdeeprathore/cypress-chrome-firefox-latest-versions'
+      - image: 'cypress/included:6.1.0'
+    
+#       - image: 'navdeeprathore/cypress-chrome-firefox-latest-versions'
     resource_class: small
         # environment:
         #   TERM: xterm
