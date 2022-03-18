@@ -24,6 +24,7 @@ workflows:
       - cypress/run:
 #           context:
 #             - toodledid
+          executor: cypress/base-14
           executor: chrome80-ff72
           browser: chrome
           store_artifacts: true
