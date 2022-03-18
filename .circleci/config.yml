@@ -11,7 +11,9 @@ executors:
 #       - image: 'cypress/browsers:node13.6.0-chrome80-ff72'
 #       - image: 'cypress/browsers:node16.14.0-slim-chrome99-ff97'
 #       - image: 'cypress/browsers:node16.13.2-chrome97-ff96'
-      - image: 'cypress/browsers:chrome64'
+#       - image: 'cypress/browsers:chrome64' # does not have npm ci
+      - image: 'cypress/browsers:node12.14.0-chrome79-ff71'
+      
       
 workflows:
   build:
