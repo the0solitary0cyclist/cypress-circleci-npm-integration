@@ -14,11 +14,11 @@ executors:
 #       - image: 'cypress/browsers:chrome64' # does not have npm ci
 #       - image: 'cypress/browsers:node12.14.0-chrome79-ff71' #chrome error
 #       - image: 'cypress/browsers:node12.4.0-chrome76' #chrome error
-      - image: 'cypress/included' #chrome error
-      
+#       - image: 'cypress/included' #cannot pull this
+      - image: 'cypress/included:9.5.2' #cannot pull this
 
       
-      
+           
       
 workflows:
   build:
