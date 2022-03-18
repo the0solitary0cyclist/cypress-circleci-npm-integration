@@ -1,13 +1,32 @@
 version: 2.1
 orbs:
-  cypress: cypress-io/cypress@1
+  cypress: cypress-io/cypress@1.27.0
 workflows:
   build:
     jobs:
       - cypress/run:
-          executor: cypress/browsers-chrome69
-          browser: chrome
-          store_artifacts: true
+          name: Install Dependencies
+          command: npm install
+
+      - cypress/run:
+          name: Testing Project
+          requires:
+            - Install Dependencies
+          debug: 'cypress:cli'
+          attach-workspace: true
+          command: npm run ci-run
+
+
+# version: 2.1
+# orbs:
+#   cypress: cypress-io/cypress@1
+# workflows:
+#   build:
+#     jobs:
+#       - cypress/run:
+#           executor: cypress/browsers-chrome69
+#           browser: chrome
+#           store_artifacts: true
 
 
 # version: 2.1
