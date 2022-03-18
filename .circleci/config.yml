@@ -1,36 +1,48 @@
 version: 2.1
 orbs:
-  # use latest 1.x.y version of the orb
-  # best practice is to use an exact version
-#   cypress: cypress-io/cypress@1.16.1
-#   node: circleci/node@1.1
-  cypress: cypress-io/cypress@1.29.0
-
-executors:
-  chrome80-ff72:
-    docker:
-#       - image: 'cypress/browsers:node13.6.0-chrome80-ff72'
-#       - image: 'cypress/browsers:node16.14.0-slim-chrome99-ff97'
-#       - image: 'cypress/browsers:node16.13.2-chrome97-ff96'
-#       - image: 'cypress/browsers:chrome64' # does not have npm ci
-#       - image: 'cypress/browsers:node12.14.0-chrome79-ff71' #chrome error
-#       - image: 'cypress/browsers:node12.4.0-chrome76' #chrome error
-#       - image: 'cypress/included' #cannot pull this
-      - image: 'cypress/included:9.5.2' #cannot pull this
-
-      
-           
-      
+  cypress: cypress-io/cypress@1
 workflows:
   build:
     jobs:
       - cypress/run:
-#           context:
-#             - toodledid
-#           executor: cypress/base-14
-          executor: chrome80-ff72
+          executor: cypress/browsers-chrome69
           browser: chrome
           store_artifacts: true
+
+
+# version: 2.1
+# orbs:
+#   # use latest 1.x.y version of the orb
+#   # best practice is to use an exact version
+# #   cypress: cypress-io/cypress@1.16.1
+# #   node: circleci/node@1.1
+#   cypress: cypress-io/cypress@1.29.0
+
+# executors:
+#   chrome80-ff72:
+#     docker:
+# #       - image: 'cypress/browsers:node13.6.0-chrome80-ff72'
+# #       - image: 'cypress/browsers:node16.14.0-slim-chrome99-ff97'
+# #       - image: 'cypress/browsers:node16.13.2-chrome97-ff96'
+# #       - image: 'cypress/browsers:chrome64' # does not have npm ci
+# #       - image: 'cypress/browsers:node12.14.0-chrome79-ff71' #chrome error
+# #       - image: 'cypress/browsers:node12.4.0-chrome76' #chrome error
+# #       - image: 'cypress/included' #cannot pull this
+#       - image: 'cypress/included:9.5.2' #cannot pull this
+
+      
+           
+      
+# workflows:
+#   build:
+#     jobs:
+#       - cypress/run:
+# #           context:
+# #             - toodledid
+# #           executor: cypress/base-14
+#           executor: chrome80-ff72
+#           browser: chrome
+#           store_artifacts: true
 
 # # simplest
 # version: 2.1
