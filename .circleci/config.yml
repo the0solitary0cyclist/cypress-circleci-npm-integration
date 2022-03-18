@@ -1,33 +1,17 @@
-# version: 2.1
-# orbs:
-#   cypress: cypress-io/cypress@1.27.0
-# workflows:
-#   build:
-#     jobs:
-#       - cypress/run:
-#           name: Install Dependencies
-#           command: npm install
-
-#       - cypress/run:
-#           name: Testing Project
-#           requires:
-#             - Install Dependencies
-#           debug: 'cypress:*'
-#           attach-workspace: true
-#           browser: chrome
-#           command: npm run cy-run
-#           store_artifacts: true
-
 version: 2.1
 orbs:
-  cypress: cypress-io/cypress@1.27.0
+  cypress: cypress-io/cypress@1
+#   cypress: cypress-io/cypress@1.27.0
 workflows:
   nightly:
     triggers:
-    - schedule:
-        cron: "*/3 * * * *"
-  build:
-    jobs:
+      - schedule:
+          cron: '"*/3 * * * *'
+#           filters:
+#             branches:
+#               only:
+#                 - master
+    jobs:    
       - cypress/run:
           name: Install Dependencies
           command: npm install
