@@ -1,24 +1,24 @@
-# version: 2.1
-# orbs:
-#   # use latest 1.x.y version of the orb
-#   # best practice is to use an exact version
-#   cypress: cypress-io/cypress@1.16.1
-#   node: circleci/node@1.1
+version: 2.1
+orbs:
+  # use latest 1.x.y version of the orb
+  # best practice is to use an exact version
+  cypress: cypress-io/cypress@1.16.1
+  node: circleci/node@1.1
 
-# executors:
-#   chrome80-ff72:
-#     docker:
-#       - image: 'cypress/browsers:node13.6.0-chrome80-ff72'
+executors:
+  chrome80-ff72:
+    docker:
+      - image: 'cypress/browsers:node13.6.0-chrome80-ff72'
 
-# workflows:
-#   build:
-#     jobs:
-#       - cypress/run:
-#           context:
-#             - toodledid
-#           executor: chrome80-ff72
-#           browser: chrome
-#           store_artifacts: true
+workflows:
+  build:
+    jobs:
+      - cypress/run:
+          context:
+            - toodledid
+          executor: chrome80-ff72
+          browser: chrome
+          store_artifacts: true
 
 # simplest
 # version: 2.1
@@ -32,68 +32,68 @@
 
 # ~/.circleci/config.yml
 
-version: 2
+# version: 2
 
-jobs:
-  build:
-    working_directory: ~/tmp
-    docker:
-      - image: 'cypress/included:6.1.0'
+# jobs:
+#   build:
+#     working_directory: ~/tmp
+#     docker:
+#       - image: 'cypress/included:6.1.0'
     
+# #       - image: 'navdeeprathore/cypress-chrome-firefox-latest-versions'
+#     resource_class: small
+#         # environment:
+#         #   TERM: xterm
+#     steps:
+#       - checkout
+#       - restore_cache:
+#           keys:
+#             - 'v2-deps-{{ .Branch }}-{{ checksum "package-lock.json" }}'
+#             - 'v2-deps-{{ .Branch }}-'
+#             - v2-deps-
+#       - run: 
+#           name: "Install Dependencies"
+#           command: npm i
+#       - save_cache:
+#           key: 'v2-deps-{{ .Branch }}-{{ checksum "package-lock.json" }}'
+#           paths:
+#             - ~/.npm
+#             - ~/.cache
+# #       - run:
+# #           name: "Verify Cypress Config"
+# #           command: npm run cy:verify
+#       - persist_to_workspace:
+#           root: ~/
+#           paths:
+#             - .cache
+#             - tmp
+#   test1:
+#     working_directory: ~/tmp
+#     docker:
 #       - image: 'navdeeprathore/cypress-chrome-firefox-latest-versions'
-    resource_class: small
-        # environment:
-        #   TERM: xterm
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-            - 'v2-deps-{{ .Branch }}-{{ checksum "package-lock.json" }}'
-            - 'v2-deps-{{ .Branch }}-'
-            - v2-deps-
-      - run: 
-          name: "Install Dependencies"
-          command: npm i
-      - save_cache:
-          key: 'v2-deps-{{ .Branch }}-{{ checksum "package-lock.json" }}'
-          paths:
-            - ~/.npm
-            - ~/.cache
+#     resource_class: small
+#         # environment:
+#         #   TERM: xterm
+#     steps:
+#       - attach_workspace:
+#           at: ~/
 #       - run:
-#           name: "Verify Cypress Config"
-#           command: npm run cy:verify
-      - persist_to_workspace:
-          root: ~/
-          paths:
-            - .cache
-            - tmp
-  test1:
-    working_directory: ~/tmp
-    docker:
-      - image: 'navdeeprathore/cypress-chrome-firefox-latest-versions'
-    resource_class: small
-        # environment:
-        #   TERM: xterm
-    steps:
-      - attach_workspace:
-          at: ~/
-      - run:
-          name: Running cypress tests 1
-          command: $(npm bin)/cypress run --browser chrome
-      - store_artifacts:
-          path: cypress/videos
-      - store_artifacts:
-          path: cypress/screenshots
+#           name: Running cypress tests 1
+#           command: $(npm bin)/cypress run --browser chrome
+#       - store_artifacts:
+#           path: cypress/videos
+#       - store_artifacts:
+#           path: cypress/screenshots
   
-workflows:
-  version: 2
-  build_and_test:
-    jobs:
-      - build
-      - test1:
-          requires:
-            - build
-#           filters:
-#             branches:
-#               only: main
+# workflows:
+#   version: 2
+#   build_and_test:
+#     jobs:
+#       - build
+#       - test1:
+#           requires:
+#             - build
+# #           filters:
+# #             branches:
+# #               only: main
       
