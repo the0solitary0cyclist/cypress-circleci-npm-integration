@@ -7,10 +7,10 @@ workflows:
     triggers:
       - schedule:
           cron: "0 15 * * *"
-#           filters:
-#             branches:
-#               only:
-#                 - master
+          filters:
+            branches:
+              only:
+                - master
     jobs:    
       - cypress/run:
           name: Install Dependencies
