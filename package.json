@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "cy-run": "cypress run",
+    "cy-run": "node_modules/.bin/cypress run ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
