@@ -12,8 +12,9 @@ workflows:
           name: Testing Project
           requires:
             - Install Dependencies
-          debug: 'cypress:cli'
+          debug: 'cypress:*'
           attach-workspace: true
+          browser: 'chrome'
           command: npm run cy-run
 
 
