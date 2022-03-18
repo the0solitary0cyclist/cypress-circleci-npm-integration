@@ -9,7 +9,9 @@ executors:
   chrome80-ff72:
     docker:
 #       - image: 'cypress/browsers:node13.6.0-chrome80-ff72'
-      - image: 'cypress/browsers:node16.14.0-slim-chrome99-ff97'
+#       - image: 'cypress/browsers:node16.14.0-slim-chrome99-ff97'
+      - image: 'cypress/browsers:node16.13.2-chrome97-ff96'
+      
       
 workflows:
   build:
