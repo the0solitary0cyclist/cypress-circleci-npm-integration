@@ -14,7 +14,7 @@ workflows:
             - Install Dependencies
           debug: 'cypress:*'
           attach-workspace: true
-          browser: 'chrome'
+          browser: chrome
           command: npm run cy-run
 
 
