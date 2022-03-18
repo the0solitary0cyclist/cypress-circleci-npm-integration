@@ -14,7 +14,7 @@ workflows:
             - Install Dependencies
           debug: 'cypress:cli'
           attach-workspace: true
-          command: npm run ci-run
+          command: npm run cy-run
 
 
 # version: 2.1
