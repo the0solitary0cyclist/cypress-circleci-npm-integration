@@ -16,6 +16,7 @@ workflows:
           attach-workspace: true
           browser: chrome
           command: npm run cy-run
+          store_artifacts: true
 
 
 # version: 2.1
